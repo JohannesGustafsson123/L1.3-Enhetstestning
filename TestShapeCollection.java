@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestShapeCollection {
-    
+
     @Test
     public void testEmptyCollection() {
         // Given: New shape collection.
@@ -15,6 +15,9 @@ public class TestShapeCollection {
         // Then: Amount of shapes, total area should be 0.
         assertEquals(0, NumberOfShapes);
         assertEquals(0.0, TotalArea);
+        
+        // Check: All shapes are circles (should return true because the collection is empty).
+        assertTrue(Collection.isAllCircles());
     }
 
     @Test
@@ -29,6 +32,9 @@ public class TestShapeCollection {
         // Then: Amount of shapes should be 1 and total area needs to be correct.
         assertEquals(1, Collection.getNumberOfShapes());
         assertEquals(50.0, Collection.getTotalArea(), 0.001);
+        
+        // Check: All shapes are circles (should return false because there's a rectangle).
+        assertFalse(Collection.isAllCircles());
     }
 
     @Test
@@ -45,5 +51,8 @@ public class TestShapeCollection {
         // Then: Amount of shapes should be 2 and total area needs to be correct.
         assertEquals(2, Collection.getNumberOfShapes());
         assertEquals(12.0 + Math.PI * 4, Collection.getTotalArea(), 0.001);
+        
+        // Check: All shapes are circles (should return false because there's a rectangle).
+        assertFalse(Collection.isAllCircles());
     }
 }
