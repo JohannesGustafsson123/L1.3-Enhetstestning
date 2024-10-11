@@ -55,4 +55,40 @@ public class TestShapeCollection {
         // Check: All shapes are circles (should return false because there's a rectangle).
         assertFalse(Collection.isAllCircles());
     }
+
+    @Test
+    public void testSingleSquare() {
+        // Given: New shape collection and a square.
+        ShapeCollection Collection = new ShapeCollection();
+        Square Square = new Square(4); // 4 * 4 = 16 in area.
+        
+        // When: Add Square to ShapeCollection.
+        Collection.addShape(Square);
+        
+        // Then: Amount of shapes should be 1 and total area needs to be correct.
+        assertEquals(1, Collection.getNumberOfShapes());
+        assertEquals(16.0, Collection.getTotalArea(), 0.001);
+        
+        // Check: All shapes are circles (should return false because there's a square).
+        assertFalse(Collection.isAllCircles());
+    }
+
+    @Test
+    public void testTriangleAndCircle() {
+        // Given: New shape collection with a triangle and a circle.
+        ShapeCollection Collection = new ShapeCollection();
+        Triangle Triangle = new Triangle(3, 6); // 0.5 * 3 * 6 = 9 in area.
+        Circle Circle = new Circle(3); // PI * 3^2 ≈ 28.274 in area.
+        
+        // When: Add Triangle and Circle to ShapeCollection.
+        Collection.addShape(Triangle);
+        Collection.addShape(Circle);
+        
+        // Then: Amount of shapes should be 2 and total area needs to be correct.
+        assertEquals(2, Collection.getNumberOfShapes());
+        assertEquals(9.0 + Math.PI * 9, Collection.getTotalArea(), 0.001);
+        
+        // Check: All shapes are circles (should return false because there's a triangle).
+        assertFalse(Collection.isAllCircles());
+    }
 }
