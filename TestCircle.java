@@ -4,17 +4,26 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestCircle {
     @Test
     public void testSomeCircle() {
-        // TODO: Skriv klart tester för en cirkel.
-        // Ta bort raden nedan innan du börjar.
-        // Kom ihåg Given, When, Then och se till att
-        // ALLA metoder i Circle täcks av dina tester.
-        assertTrue(false);
+        // Given: New Circle
+        double Radius = 4;
+        Circle circle = new Circle(Radius);
+
+        //  When: Calculating the area.
+        double Area = circle.getArea();
+
+        // Then: The area should be Math.PI * 4 * 4 = 50.265...
+        assertEquals(Math.PI * Radius * Radius, Area, 0.001);
     }
 
     @Test
     public void testSomeOtherCircle() {
-        // TODO: Skriv klart tester för en annan cirkel.
-        // Ta bort raden nedan innan du börjar.
-        assertTrue(false);
-    }
+        // Given: New Circle
+        Circle circle2 = new Circle(0);
+
+        //  When: Calculating the area.
+        Double Area = circle2.getArea();
+
+        // Then: The Area should be 0 since radius is 0.
+        assertEquals(0.0, Area, 0.001);
+    }                                                                               
 }

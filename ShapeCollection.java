@@ -26,7 +26,7 @@ public class ShapeCollection {
         for(Shape2D shape : shapes) {
             
             if(!(shape instanceof Circle)) {
-                return false;
+return false;
             }
         }
         return true;
