@@ -17,7 +17,6 @@ public class Rectangle implements Shape2D {
 
     @Override
     public double getArea() {
-        // TODO: Skriv klart den här funktionen.
-        return 0.0;
+        return width*height;
     }
 }
