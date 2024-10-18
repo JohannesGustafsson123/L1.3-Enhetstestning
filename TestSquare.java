@@ -4,17 +4,17 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestSquare {
     @Test
     public void testSomeSquare() {
-        // TODO: Skriv klart tester för en fyrkant.
-        // Ta bort raden nedan innan du börjar.
-        // Kom ihåg Given, When, Then och se till att
-        // ALLA metoder i Square täcks av dina tester.
-        assertTrue(false);
+        Square square = new Square(5);
+        double area = square.getArea();
+        assertEquals(25.0, area, 0.001);
     }
 
     @Test
     public void testSomeOtherSquare() {
-        // TODO: Skriv klart tester för en annan fyrkant.
-        // Ta bort raden nedan innan du börjar.
-        assertTrue(false);
+        Square square = new Square(4);
+        double area = square.getArea();
+        double side = square.getSide();
+        assertEquals(4, side, 0.001);
+        assertEquals(16.0, area, 0.001);
     }
 }
